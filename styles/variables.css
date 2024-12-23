@@ -1,16 +1,26 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --main-font: 'Inter-Variable';
-  --accent-font: 'PressStart2P-Regular';
-  --bg-color: #FFF;
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P-Regular";
+  --bg-color: #fff;
   --text-color: #000;
-  --main-text-weight: 'wght' 400;
-  --accent-text-weight: 'wght' 700;
+  --main-text-weight: 400;
+  --accent-text-weight: 700;
   --mobile-width: 100%;
-  --bg-image: 
-  repeating-linear-gradient(#d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
-  repeating-linear-gradient(90deg, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
-  linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --bg-image: repeating-linear-gradient(
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
   --contour-color: #000;
   --sparks-color: #ff0000;
 }

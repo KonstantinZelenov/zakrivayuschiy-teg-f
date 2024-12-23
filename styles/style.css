@@ -45,14 +45,14 @@
   color: var(--text-color, #000);
   font-family: var(--accent-font), sans-serif;
   font-size: clamp(3.063rem, 2.709rem + 1.504vw, 4.063rem);
-  font-variation-settings: var(--main-text-weight, 400);
+  font-weight: 400;
 }
 
 .header__text {
   color: var(--text-color, #000);
   font-family: var(--accent-font), sans-serif;
   font-size: clamp(0.875rem, 0.676rem + 0.846vw, 1.438rem);
-  font-variation-settings: var(--main-text-weight, 400);
+  font-weight: 400;
 }
 
 /*ЗАКОНЧИЛ ХЕДЕР*/
@@ -72,7 +72,7 @@
   font-style: normal;
   line-height: normal;
   background-color: var(--bg-color, #fff);
-  font-variation-settings: var(--accent-text-weight, 700);
+  font-variation-settings: 'wght' var(--accent-text-weight, 700);
 }
 
 .card__image-container {
@@ -124,11 +124,11 @@
 }
 
 .card__description-container p {
-  color: var(--text-color, #000);;
+  color: var(--text-color, #000);
   font-family: var(--main-font), sans-serif;
   font-size: 18px;
   line-height: 21px;
-  font-variation-settings: var(--main-text-weight, 400);
+  font-variation-settings: 'wght' var(--main-text-weight, 400);
 }
 
 .card__description-container p:first-of-type {
@@ -173,7 +173,7 @@
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
-  font-variation-settings: var(--main-text-weight, 400);
+  font-weight: 400;
   mix-blend-mode: difference;
 }
 
@@ -208,7 +208,7 @@
 
 .button-save-memory:hover::before,
 .card__like-button:hover:before,
-.dialog-container-button:hover::before{
+.dialog-container-button:hover::before {
   width: 100%;
 }
 
@@ -285,16 +285,21 @@
 
 /*НАЧАЛ ДИАЛОГ*/
 
-.dialog-container {
+.dialog-container[open] {
+  display: flex;
+  flex-direction: column;
   margin: auto;
   padding: 30px;
   inline-size: 357px;
   block-size: 195px;
+  align-items: center;
+  justify-content: center;
 }
 
 .dialog-container__text-plus-icon {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -328,7 +333,7 @@
   line-height: 90%;
   text-transform: uppercase;
   background-color: var(--bg-color, #fff);
-  font-variation-settings: var(--main-text-weight, 400);
+  font-weight: 400;
 }
 
 .dialog-container::backdrop {
@@ -340,6 +345,8 @@ background-color: var(--text-color, #000);
   color: var(--bg-color, #fff);
   mix-blend-mode: difference;
 }
+
+
 /*ЗАКОНЧИЛ ДИАЛОГ*/
 
 
@@ -376,30 +383,23 @@ background-color: var(--text-color, #000);
 }
 
 .dialog-container {
-  margin: auto;
-  padding: 30px 40px;
   min-inline-size: 341px;
   block-size: 195px;
 }
 
 .dialog-container-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto 0 auto;
-  border: 2px solid black;
   padding: 10px 110.5px;
-  color: var(--text-color, #000);
-  font-family: var(--accent-font), sans-serif;
-  font-size: 14px;
-  line-height: 90%;
-  text-transform: uppercase;
-  background-color: var(--bg-color, #fff);
-  font-variation-settings: var(--main-text-weight, 400);
 }
 
 .list {
   gap: 48px;
+}
+
+.dialog-container[open] {
+  margin: auto;
+  padding: 30px 40px;
+  inline-size: 341px;
+  overflow: hidden;
 }
 }
 
