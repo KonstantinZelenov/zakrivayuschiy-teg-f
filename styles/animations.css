@@ -90,8 +90,8 @@
 /*анимирую размер сердца*/
 
 .like-icon.is-liked .heart {
-  animation: scale 0.3s ease-in 0.1s;
   transform-origin: center center;
+  animation: scale 0.3s ease-in 0.1s;
 }
 /*закончил с размером сердца*/
 /*ЗАКОНЧИЛ АНИМАЦИЯ СЕРДЦА*/

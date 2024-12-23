@@ -107,9 +107,9 @@
 
 @supports((text-stroke: 1px var(--bg-color, #fff)) or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   .card__image-container-label {
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--bg-color, #fff);
     text-stroke: 1px var(--bg-color, #fff);
-    text-shadow: none;
   }
 } /*Проверяю поддержку text-stroke*/
 
@@ -151,45 +151,45 @@
 
 .card__icon-button {
   border: none;
+  padding: 0;
   background-color: transparent;
+  cursor: pointer;
   inline-size: 39px;
   block-size: 36px;
-  cursor: pointer;
-  padding: 0;
 }
 
 .card__like-button {
-  border: 2px solid var(--text-color, #000);
-  background-color: transparent;
-  padding: 11px 35px;
-  cursor: pointer;
   position: relative;
+  border: 2px solid var(--text-color, #000);
+  padding: 11px 35px;
   overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .button__text {
+  position: relative;
   color: var(--bg-color, #fff);
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
   font-variation-settings: var(--main-text-weight, 400);
   mix-blend-mode: difference;
-  position: relative;
 }
 
 .button-save-memory {
-  border: 2px solid black;
+  position: relative;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 103px auto;
+  align-items: center;
   gap: 8px;
+  margin: 0 auto 103px auto;
+  border: 2px solid black;
   padding: 15px 20px;
+  overflow: hidden;
   background-color: var(--bg-color, #fff);
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
 }
 
 /*Анимация на кнопках LIKE,SAVE MEMORY, OK*/
@@ -197,13 +197,13 @@
 .card__like-button::before,
 .dialog-container-button::before {
   content: '';
+  position: absolute;
+  left: 0;
   display: block;
   width: 0%;
   height: 100%;
   background-color: black;
   transition: width 0.5s ease-in-out;
-  position: absolute;
-  left: 0;
 }
 
 .button-save-memory:hover::before,
@@ -213,9 +213,9 @@
 }
 
 .button-save-memory-disc-icon {
+  color: var(--bg-color, #fff);
   inline-size: 21px;
   block-size: 21px;
-  color: var(--bg-color, #fff);
   mix-blend-mode: difference;
 }
 
@@ -286,16 +286,16 @@
 /*НАЧАЛ ДИАЛОГ*/
 
 .dialog-container {
-  inline-size: 357px;
-  block-size: 195px;
   margin: auto;
   padding: 30px;
+  inline-size: 357px;
+  block-size: 195px;
 }
 
 .dialog-container__text-plus-icon {
   display: flex;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
 }
 
 .dialog-container__icon {
@@ -307,28 +307,28 @@
   color: var(--text-color, #000);
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
-  font-variation-settings: var(--main-text-weight, 400);
   line-height: 150%;
-  background-color: var(--bg-color, #fff);
   text-transform: uppercase;
+  background-color: var(--bg-color, #fff);
+  font-variation-settings: var(--main-text-weight, 400);
 }
 
 .dialog-container-button {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  align-items: center;
   margin: 30px auto 0 auto;
+  border: 2px solid black;
   padding: 10px 129.5px;
+  overflow: hidden;
   color: var(--text-color, #000);
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
-  font-variation-settings: var(--main-text-weight, 400);
-  background-color: var(--bg-color, #fff);
   text-transform: uppercase;
-  position: relative;
-  overflow: hidden;
+  background-color: var(--bg-color, #fff);
+  font-variation-settings: var(--main-text-weight, 400);
 }
 
 .dialog-container::backdrop {
@@ -375,32 +375,27 @@ background-color: var(--text-color, #000);
   padding-right: 2px;
 }
 
-.button-save-memory-disc-icon {
-  inline-size: 28px;
-  block-size: 28px;
-}
-
 .dialog-container {
-  min-inline-size: 341px;
-  block-size: 195px;
   margin: auto;
   padding: 30px 40px;
+  min-inline-size: 341px;
+  block-size: 195px;
 }
 
 .dialog-container-button {
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: 2px solid black;
+  align-items: center;
   margin: 30px auto 0 auto;
+  border: 2px solid black;
   padding: 10px 110.5px;
   color: var(--text-color, #000);
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 90%;
-  font-variation-settings: var(--main-text-weight, 400);
-  background-color: var(--bg-color, #fff);
   text-transform: uppercase;
+  background-color: var(--bg-color, #fff);
+  font-variation-settings: var(--main-text-weight, 400);
 }
 
 .list {
