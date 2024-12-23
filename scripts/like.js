@@ -39,3 +39,16 @@ function setButtonText(heart, button) {
     );
   }
 }
+
+/*Выбираем кнопку через обработчик события чтобы не инлайнить */
+/*Показываю модальное окно*/
+document.getElementById('save').addEventListener('click', function() {
+  document.getElementById('dialog').showModal();
+});
+
+/*Закрываю модальное окно*/
+document.getElementById('ok-button').addEventListener('click', function() {
+  document.getElementById('dialog').close();
+});
+
+

@@ -1,16 +1,415 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
 
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block-start: 100px;
+  font-family: Inter, sans-serif; /*Запасной шрифт без засечек если не сработает вариативный шрифт*/
+  font-weight: 400;
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font), sans-serif;
+    font-variation-settings: var(--main-text-weight);
+  }
+} /*Прогрессивное улучшение на всякий случай*/
+
+/*НАЧАЛ ХЕДЕР*/
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-block-end: 100px;
+  border: 2px solid var(--text-color, #000);
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  background-color: var(--bg-color);
+  inline-size: clamp(23.5rem, 16.344rem + 30.451vw, 43.75rem);
+  block-size: clamp(20.438rem, 19.532rem + 3.853vw, 23rem);
+}
+
+.header__main-title {
+  color: var(--text-color, #000);
+  font-family: var(--accent-font), sans-serif;
+  font-size: clamp(3.063rem, 2.709rem + 1.504vw, 4.063rem);
+  font-variation-settings: var(--main-text-weight, 400);
+}
+
+.header__text {
+  color: var(--text-color, #000);
+  font-family: var(--accent-font), sans-serif;
+  font-size: clamp(0.875rem, 0.676rem + 0.846vw, 1.438rem);
+  font-variation-settings: var(--main-text-weight, 400);
+}
+
+/*ЗАКОНЧИЛ ХЕДЕР*/
+
+/*НАЧАЛ КАРТОЧКИ*/
+.card {
+  border: 2px solid var(--text-color, #000);
+  inline-size: clamp(23.5rem, 16.344rem + 30.451vw, 43.75rem);
+}
+
+.card__header {
+  border-block-end: 2px solid var(--text-color);
+  padding: 5px 10px;
+  color: var(--text-color, #000);
+  font-family: var(--main-font), sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+  background-color: var(--bg-color, #fff);
+  font-variation-settings: var(--accent-text-weight, 700);
+}
+
+.card__image-container {
+  position: relative;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+.card__image-container-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
+  color: var(--text-color, #000);
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: 
+  1px 1px 0 white, 
+  -1px -1px 0 white, 
+  1px -1px 0 white, 
+  -1px 1px 0 white;
+  font-variation-settings: var(--main-text-weight, 400);
+  mix-blend-mode: hard-light;
+}
+
+@supports((text-stroke: 1px var(--bg-color, #fff)) or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
+  .card__image-container-label {
+    -webkit-text-stroke: 1px var(--bg-color, #fff);
+    text-stroke: 1px var(--bg-color, #fff);
+    text-shadow: none;
+  }
+} /*Проверяю поддержку text-stroke*/
+
+.card__description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-block-start: 2px solid var(--text-color);
+  padding: 25px;
+  font-style: normal;
+  background-color: var(--bg-color, #fff);
+}
+
+.card__description-container p {
+  color: var(--text-color, #000);;
+  font-family: var(--main-font), sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  font-variation-settings: var(--main-text-weight, 400);
+}
+
+.card__description-container p:first-of-type {
+  padding-bottom: 2px;
+}
+
+.card-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-button-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+  inline-size: 39px;
+  block-size: 36px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.card__like-button {
+  border: 2px solid var(--text-color, #000);
+  background-color: transparent;
+  padding: 11px 35px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.button__text {
+  color: var(--bg-color, #fff);
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 90%;
+  font-variation-settings: var(--main-text-weight, 400);
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.button-save-memory {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 103px auto;
+  gap: 8px;
+  padding: 15px 20px;
+  background-color: var(--bg-color, #fff);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/*Анимация на кнопках LIKE,SAVE MEMORY, OK*/
+.button-save-memory::before,
+.card__like-button::before,
+.dialog-container-button::before {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+  transition: width 0.5s ease-in-out;
+  position: absolute;
+  left: 0;
+}
+
+.button-save-memory:hover::before,
+.card__like-button:hover:before,
+.dialog-container-button:hover::before{
+  width: 100%;
+}
+
+.button-save-memory-disc-icon {
+  inline-size: 21px;
+  block-size: 21px;
+  color: var(--bg-color, #fff);
+  mix-blend-mode: difference;
+}
+
+.card__like-button:focus,
+.button-save-memory:focus,
+.card__icon-button:focus,
+.dialog-container-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid black;
+  outline-offset: -1px;
+  transition: outline 0.3s ease;
+}
+
+.card__like-button:focus-visible,
+.button-save-memory:focus-visible,
+.dialog-container-button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text-color, #000);
+  transition: box-shadow 0.3s ease;
+}
+/*Закончили анимацию кнопок LIKE,SAVE MEMORY, OK*/
+
+/*Фильтры для изображений*/
+.card__image-brightness-filter {
+  filter: brightness(80%);
+}
+
+.card__image-contrast-filter {
+  filter: contrast(130%);
+}
+
+.card__image-blur-filter {
+  filter: blur(0.2rem);
+}
+
+.card__image-opacity-filter {
+  filter: opacity(50%);
+}
+
+.card__image-greyscale-filter {
+  filter: grayscale(0.8);
+}
+
+.card__image-saturate-filter {
+  filter:saturate(140%);
+}
+
+.card__image-hue-rotate-filter {
+  filter: hue-rotate(90deg);
+}
+
+.card__image-multy-filter {
+  filter: sepia(1) invert(0.3);
+}
+/*Закончил фильтры для изображений*/
+/*ЗАКОНЧИЛ КАРТОЧКИ*/
+
+/*СТИЛИ ДЛЯ СПИСКА*/
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-block-end: 50px;
+}
+
+/*НАЧАЛ ДИАЛОГ*/
+
+.dialog-container {
+  inline-size: 357px;
+  block-size: 195px;
+  margin: auto;
+  padding: 30px;
+}
+
+.dialog-container__text-plus-icon {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.dialog-container__icon {
+  min-inline-size: 39px;
+  block-size: 39px;
+}
+
+.dialog-container__text {
+  color: var(--text-color, #000);
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  font-variation-settings: var(--main-text-weight, 400);
+  line-height: 150%;
+  background-color: var(--bg-color, #fff);
+  text-transform: uppercase;
+}
+
+.dialog-container-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin: 30px auto 0 auto;
+  padding: 10px 129.5px;
+  color: var(--text-color, #000);
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 90%;
+  font-variation-settings: var(--main-text-weight, 400);
+  background-color: var(--bg-color, #fff);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.dialog-container::backdrop {
+opacity: 0.75;
+background-color: var(--text-color, #000);
+}
+
+.dialog-container-button-span {
+  color: var(--bg-color, #fff);
+  mix-blend-mode: difference;
+}
+/*ЗАКОНЧИЛ ДИАЛОГ*/
+
+
+
+@media (width < 376px) {
+  .header {
+    inline-size: var(--mobile-width);
+  }
+
+  .card {
+    inline-size: var(--mobile-width);
+  }
+
+  .button-save-memory {
+    flex-direction: column;
+  }
+
+  .button-save-memory-disc-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .card__description-container p:first-of-type {
+    padding-bottom: 3px;
+}
+
+.card__image-container-label {
+  top: 23px;
+  right: 11px;
+}
+
+.mobile-padding {
+  padding-right: 2px;
+}
+
+.button-save-memory-disc-icon {
+  inline-size: 28px;
+  block-size: 28px;
+}
+
+.dialog-container {
+  min-inline-size: 341px;
+  block-size: 195px;
+  margin: auto;
+  padding: 30px 40px;
+}
+
+.dialog-container-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  margin: 30px auto 0 auto;
+  padding: 10px 110.5px;
+  color: var(--text-color, #000);
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 90%;
+  font-variation-settings: var(--main-text-weight, 400);
+  background-color: var(--bg-color, #fff);
+  text-transform: uppercase;
+}
+
+.list {
+  gap: 48px;
+}
+}
+
+
+
+
+
+
