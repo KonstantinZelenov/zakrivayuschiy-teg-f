@@ -6,7 +6,7 @@
   align-items: center;
   padding-block-start: 100px;
   font-family: Inter, sans-serif; /*Запасной шрифт без засечек если не сработает вариативный шрифт*/
-  font-weight: 400;
+  font-variation-settings: 'wght' var(--main-text-weight, 400);
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
@@ -18,7 +18,7 @@
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--main-font), sans-serif;
-    font-variation-settings: var(--main-text-weight);
+    font-variation-settings: 'wght' var(--main-text-weight, 400);
   }
 } /*Прогрессивное улучшение на всякий случай*/
 
