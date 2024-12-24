@@ -1,11 +1,11 @@
-
 .page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-block-start: 100px;
-  font-family: Inter, sans-serif; /*Запасной шрифт без засечек если не сработает вариативный шрифт*/
+  font-family: Inter, sans-serif;
+  /*Запасной шрифт без засечек если не сработает вариативный шрифт*/
   background-color: var(--bg-color);
   background-image: var(--bg-image);
   background-size: cover;
@@ -20,7 +20,9 @@
     font-family: var(--main-font), sans-serif;
     font-variation-settings: 'wght' var(--main-text-weight, 400);
   }
-} /*Прогрессивное улучшение на всякий случай*/
+}
+
+/*Прогрессивное улучшение на всякий случай*/
 
 /*НАЧАЛ ХЕДЕР*/
 .header {
@@ -96,11 +98,11 @@
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   text-transform: uppercase;
-  text-shadow: 
-  1px 1px 0 white, 
-  -1px -1px 0 white, 
-  1px -1px 0 white, 
-  -1px 1px 0 white;
+  text-shadow:
+    1px 1px 0 white,
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white;
   font-variation-settings: var(--main-text-weight, 400);
   mix-blend-mode: hard-light;
 }
@@ -111,7 +113,9 @@
     -webkit-text-stroke: 1px var(--bg-color, #fff);
     text-stroke: 1px var(--bg-color, #fff);
   }
-} /*Проверяю поддержку text-stroke*/
+}
+
+/*Проверяю поддержку text-stroke*/
 
 .card__description-container {
   display: flex;
@@ -238,6 +242,7 @@
   box-shadow: 2px 2px 0px 0px var(--text-color, #000);
   transition: box-shadow 0.3s ease;
 }
+
 /*Закончили анимацию кнопок LIKE,SAVE MEMORY, OK*/
 
 /*Фильтры для изображений*/
@@ -262,7 +267,7 @@
 }
 
 .card__image-saturate-filter {
-  filter:saturate(80%);
+  filter: saturate(80%);
 }
 
 .card__image-hue-rotate-filter {
@@ -272,6 +277,7 @@
 .card__image-multy-filter {
   filter: sepia(1) invert(0.3);
 }
+
 /*Закончил фильтры для изображений*/
 /*ЗАКОНЧИЛ КАРТОЧКИ*/
 
@@ -337,8 +343,8 @@
 }
 
 .dialog-container::backdrop {
-opacity: 0.75;
-background-color: var(--text-color, #000);
+  opacity: 0.75;
+  background-color: var(--text-color, #000);
 }
 
 .dialog-container-button-span {
@@ -350,30 +356,35 @@ background-color: var(--text-color, #000);
 
 /*МОИ ДОП АНИМАШКИ*/
 @keyframes pulse {
-  0%, 100% {
-      transform: scale(1);
+
+  0%,
+  100% {
+    transform: scale(1);
   }
+
   50% {
-      transform: scale(1.3); 
+    transform: scale(1.3);
   }
 }
 
 @keyframes spin {
-  from { 
-    transform: scaleX(-1) rotate(0deg); 
+  from {
+    transform: scaleX(-1) rotate(0deg);
   }
-  to { 
-    transform: scaleX(-1) rotate(-360deg); 
+
+  to {
+    transform: scaleX(-1) rotate(-360deg);
   }
 }
 
 @keyframes hueRotate {
-  from { 
-    filter: hue-rotate(0deg); 
-  } 
-  to { 
-    filter: hue-rotate(360deg); 
-  } 
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .lamp {
@@ -385,7 +396,7 @@ background-color: var(--text-color, #000);
   background-color: transparent;
   inline-size: clamp(1.875rem, 1.212rem + 2.82vw, 3.75rem);
   block-size: clamp(2.5rem, 1.617rem + 3.759vw, 5rem);
-  
+
 }
 
 .lamp-img {
@@ -399,7 +410,7 @@ background-color: var(--text-color, #000);
 .lamp-img.active {
   filter: brightness(1.4) drop-shadow(0 0 20px rgba(255, 255, 0, 1));
   transform: scale(1.3);
-  animation: none; 
+  animation: none;
 }
 
 .lamp-cloud {
@@ -497,20 +508,20 @@ background-color: var(--text-color, #000);
   right: clamp(0.625rem, 0.404rem + 0.94vw, 1.25rem);
   font-family: var(--accent-font), sans-serif;
   font-size: clamp(0.5rem, 0.367rem + 0.564vw, 0.875rem);
-  text-shadow: 
-  1px 1px 0 white, 
-  -1px -1px 0 white, 
-  1px -1px 0 white, 
-  -1px 1px 0 white;
+  text-shadow:
+    1px 1px 0 white,
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white;
 }
 
 .voland-img {
   position: absolute;
   bottom: clamp(7.5rem, 5.512rem + 8.459vw, 13.125rem);
   left: clamp(1.25rem, 0.808rem + 1.88vw, 2.5rem);
-  transform-origin: center; 
+  transform-origin: center;
   animation: spin 20s linear infinite;
-  inline-size: clamp(7.5rem, 4.629rem + 12.218vw, 15.625rem); 
+  inline-size: clamp(7.5rem, 4.629rem + 12.218vw, 15.625rem);
 }
 
 .voland-cloud {
@@ -597,7 +608,7 @@ background-color: var(--text-color, #000);
     padding: 0;
     background-color: transparent;
     inline-size: 30px;
-    block-size: 40px; 
+    block-size: 40px;
   }
 
   /*МОИ ДОП АНИМАШКИ*/
@@ -676,7 +687,7 @@ background-color: var(--text-color, #000);
     right: 100px;
     font-size: 9px;
   }
-  
+
   .my-text {
     top: 302px;
     left: 60px;
@@ -684,9 +695,5 @@ background-color: var(--text-color, #000);
   }
 
 }
+
 /*ЗАКОНЧИЛ МОИ АНИМАШКИ*/
-
-
-
-
-
