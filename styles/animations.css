@@ -18,50 +18,84 @@
   }
 }
 
+/*Мои доп кейфреймы*/
 
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: scaleX(-1) rotate(0deg);
+  }
+
+  to {
+    transform: scaleX(-1) rotate(-360deg);
+  }
+}
+
+@keyframes hueRotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/*Закончил мои доп кейфреймы*/
 
 /*АНИМАЦИЯ СЕРДЦА*/
 /*анимирую сердцевину*/
 .like-icon .core {
   fill: var(--bg-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s 0.03s linear;
 }
 
 .card__icon-button:hover .core {
   fill: var(--contour-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .core {
   fill: var(--sparks-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .core {
   fill: var(--sparks-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 /*закончил сердцевину*/
 /*анимирую тело*/
 .like-icon .main-body {
   fill: var(--bg-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
   fill: var(--contour-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:active .main-body {
   fill: var(--sparks-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--sparks-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s 0.05s linear;
 }
 /*закончил тело*/
 
@@ -73,7 +107,7 @@
 
 .like-icon.is-liked .contour {
   fill: var(--sparks-color);
-  transition: fill 0.3s 0.06s;
+  transition: fill 0.3s 0.06s linear;
 }
 /*закончил контур*/
 
